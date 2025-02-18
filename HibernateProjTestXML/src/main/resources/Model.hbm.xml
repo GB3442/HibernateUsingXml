@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.example.Entity.Model" table="model">
+        <!-- Primary Key -->
+        <id name="mid" column="mid">
+            <generator class="increment"/>
+        </id>
+
+        <property name="name" column="name" length="100" not-null="true"/>
+        <property name="price" column="price" not-null="true"/>
+        <property name="operatingSystem" column="operating_system" length="50"/>
+        <property name="batteryCapacity" column="battery_capacity"/>
+
+        <many-to-one name="mobile" column="mobile_id" not-null="true" cascade="all" />
+    </class>
+</hibernate-mapping>
